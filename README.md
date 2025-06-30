@@ -160,7 +160,7 @@ STAR --runMode genomeGenerate --genomeDir star_index --genomeFastaFiles genome/*
 #--outFileNamePrefix: output files name prefix
 
 STAR --genomeDir star_index --readFilesCommand zcat \
---readFilesIn results/2_trimmed_output/sample_R1_001_val_1.fq.gz results/2_trimmed_output/sample_val_2.fq.gz \
+--readFilesIn results/2_trimmed_output/sample_R1_001_val_1.fq.gz results/2_trimmed_output/sample_R2_001_val_2.fq.gz \
 --outFilterMismatchNmax 2 --runThreadN 4 --outSAMtype BAM SortedByCoordinate --quantMode GeneCounts \
 --outFileNamePrefix results/4_aligned_sequences/sample
 ```
