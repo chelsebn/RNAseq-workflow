@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# make output directory if it doesn't exist
-mkdir -p results/2_trimmed_output
-
 # list of sample names (no _R1/_R2 suffix)
 samples=(
   68A 68B 68C
