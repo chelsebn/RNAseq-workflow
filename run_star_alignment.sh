@@ -7,7 +7,7 @@ alignedDir="/mnt/p/RNAseq_data/results/3_aligned_sequences"
 bamDir="${alignedDir}/aligned_bam"
 logDir="${alignedDir}/aligned_logs"
 
-# make output directories if missing
+# create output directories if missing
 mkdir -p "$alignedDir" "$bamDir" "$logDir"
 
 # list of sample names (no _R1/_R2 suffix)
@@ -28,19 +28,20 @@ do
   STAR \
     --genomeDir "$genomeDir" \
     --readFilesCommand zcat \
-    --readFilesIn "${trimmedDir}/${sample}_R1_001_val_1.fq.gz" "${trimmedDir}/${sample}_R2_001_val_2.fq.gz" \
+    --readFilesIn "${trimmedDir}/${sample}_R1_val_1.fq.gz" "${trimmedDir}/${sample}_R2_val_2.fq.gz" \
     --outFilterMismatchNmax 2 \
     --runThreadN 4 \
     --outSAMtype BAM SortedByCoordinate \
     --quantMode GeneCounts \
-    --outFileNamePrefix "${alignedDir}/${sample}_"
+    --outFileNamePrefix "${alignedDir}/${sample}_" \
+    --outTmpDir "/tmp/STARtmp_${sample}"
 
   # Move the BAM file to BAM folder
   mv -v "${alignedDir}/${sample}_Aligned.sortedByCoord.out.bam" "$bamDir"
 
-  # Move the logs to the log folder
+  # Move the logs to the log folder (skip if missing)
   mv -v "${alignedDir}/${sample}_Log.out" "$logDir"
-  mv -v "${alignedDir}/${sample}_Log.final.out" "$logDir"
+  [ -f "${alignedDir}/${sample}_Log.final.out" ] && mv -v "${alignedDir}/${sample}_Log.final.out" "$logDir"
   mv -v "${alignedDir}/${sample}_Log.progress.out" "$logDir"
-  mv -v "${aligned
-
+  [ -f "${alignedDir}/${sample}_SJ.out.tab" ] && mv -v "${alignedDir}/${sample}_SJ.out.tab" "$logDir"
+done
