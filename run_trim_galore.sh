@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# create results directory
+mkdir -p /mnt/p/RNAseq_data/results/2_trimmed_output
+
 # list of sample names (no _R1/_R2 suffix)
 samples=(
   68A 68B 68C
@@ -22,6 +25,6 @@ do
     -j 6 \
     --trim-n \
     --length 25 \
-    --output_dir results/2_trimmed_output \
-    input/${sample}_R1.fastq.gz input/${sample}_R2.fastq.gz
+    --output_dir /mnt/p/RNAseq_data/results/2_trimmed_output \
+    /mnt/p/RNAseq_data/input/${sample}_R1.fastq.gz /mnt/p/RNAseq_data/input/${sample}_R2.fastq.gz
 done
