@@ -3,7 +3,7 @@
 # define directories
 genomeDir="/mnt/p/RNAseq_data/star_index"
 trimmedDir="/mnt/p/RNAseq_data/results/2_trimmed_output"
-alignedDir="/mnt/p/RNAseq_data/results/4_aligned_sequences"
+alignedDir="/mnt/p/RNAseq_data/results/3_aligned_sequences"
 bamDir="${alignedDir}/aligned_bam"
 logDir="${alignedDir}/aligned_logs"
 
