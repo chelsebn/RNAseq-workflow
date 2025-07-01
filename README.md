@@ -11,7 +11,7 @@ I followed the directions on the [YCRC Conda Documentation](https://docs.ycrc.ya
 
 ```
 module load miniconda
-conda create -n env_name fastqc trim-galore star subread multiqc samtools
+conda create -n RNAseq_data -c bioconda -c conda-forge fastqc trim-galore star subread multiqc samtools
 ```
 
 Then, I am able to load the conda environment containing all of the required packages with the following code.
