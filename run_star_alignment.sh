@@ -6,8 +6,8 @@
 #SBATCH --nodes=1             ## (-N) number of nodes to use
 #SBATCH --ntasks=1           ## (-n) number of tasks to launch
 #SBATCH --cpus-per-task=1     ## number of cores the job needs
-#SBATCH --error=align_star.err  ## error log file
-#SBATCH --output=align_star.out ## output log file
+#SBATCH --error=align_star_genome-%J.err  ## error log file
+#SBATCH --output=align_star_genome-%J.out ## output log file
 
 # define directories
 genomeDir="/mnt/p/RNAseq_data/star_index"
