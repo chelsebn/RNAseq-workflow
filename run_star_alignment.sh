@@ -2,7 +2,7 @@
 
 #SBATCH --job-name=align_star_genome    ## Name of the job.
 #SBATCH -A  CHELSEBN 
-#SBATCH -p standard              ## partition name
+#SBATCH -p free              ## partition name
 #SBATCH --nodes=1             ## (-N) number of nodes to use
 #SBATCH --ntasks=1           ## (-n) number of tasks to launch
 #SBATCH --cpus-per-task=1     ## number of cores the job needs
