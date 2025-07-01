@@ -21,6 +21,7 @@ mkdir -p "$alignedDir" "$bamDir" "$logDir"
 
 # List of sample names (no _R1/_R2 suffix)
 samples=(
+  68A 68B 68C
   70A_T 70B_T 70C_T
   77A 77B 77C
   82A_T 82B_T 82C_T
