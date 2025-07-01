@@ -19,9 +19,8 @@ logDir="${alignedDir}/aligned_logs"
 # create output directories if missing
 mkdir -p "$alignedDir" "$bamDir" "$logDir"
 
-# list of sample names (no _R1/_R2 suffix)
+# List of sample names (no _R1/_R2 suffix)
 samples=(
-  68A 68B 68C
   70A_T 70B_T 70C_T
   77A 77B 77C
   82A_T 82B_T 82C_T
@@ -29,7 +28,7 @@ samples=(
   FA_T FB_T FC_T
 )
 
-# loop over samples
+# Loop over samples
 for sample in "${samples[@]}"
 do
   echo "Aligning $sample"
@@ -53,4 +52,6 @@ do
   [ -f "${alignedDir}/${sample}_Log.final.out" ] && mv -v "${alignedDir}/${sample}_Log.final.out" "$logDir"
   mv -v "${alignedDir}/${sample}_Log.progress.out" "$logDir"
   [ -f "${alignedDir}/${sample}_SJ.out.tab" ] && mv -v "${alignedDir}/${sample}_SJ.out.tab" "$logDir"
+  [ -f "${alignedDir}/${sample}_ReadsPerGene.out.tab" ] && mv -v "${alignedDir}/${sample}_ReadsPerGene.out.tab" "$logDir"
+
 done
