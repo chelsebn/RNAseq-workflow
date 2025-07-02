@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-nameplot_spearman_corr    ## Name of the job.
+#SBATCH --job-name=plot_spearman_corr    ## Name of the job.
 #SBATCH -A  CHELSEBN 
 #SBATCH -p standard              ## partition name
 #SBATCH --nodes=1             ## (-N) number of nodes to use
