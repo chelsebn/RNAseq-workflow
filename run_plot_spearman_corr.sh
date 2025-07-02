@@ -11,7 +11,7 @@
 
 # load conda
 source ~/miniconda3/etc/profile.d/conda.sh
-conda activate RNAseq_data
+conda activate deeptools_env
 
 plotCorrelation -in /pub/chelsebn/BakerLab/RNAseq_data/results/3_aligned_sequences/aligned_bam/bamcoverage/bw-summary.npz \
     --corMethod spearman --skipZeros \
