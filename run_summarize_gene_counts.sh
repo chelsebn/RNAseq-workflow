@@ -9,6 +9,9 @@
 #SBATCH --error=summarize_gene_counts-%J.err  ## error log file
 #SBATCH --output=summarize_gene_counts-%J.out ## output log file
 
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate RNAseq_data
+
 # Move to the folder containing the BAM files
 cd /pub/chelsebn/BakerLab/RNAseq_data/results/3_aligned_sequences/aligned_bam || {
   echo "Error: cannot cd into /pub/chelsebn/BakerLab/RNAseq_data/results/3_aligned_sequences/aligned_bam"
