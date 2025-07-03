@@ -1,3 +1,4 @@
+# Plots Number of genes vs. FPKM, zero values are plotted as 0.0001 as a pseudo value
 # install needed plotting packages if not yet present
 if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
 if (!requireNamespace("reshape2", quietly = TRUE)) install.packages("reshape2")
