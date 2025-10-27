@@ -31,4 +31,5 @@ featureCounts \
   -T 4 \
   -M \
   -p \
+  -s 1 \ # Change based on strand 
   $dirlist
