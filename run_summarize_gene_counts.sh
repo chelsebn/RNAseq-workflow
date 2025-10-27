@@ -30,6 +30,5 @@ featureCounts \
   -g gene_id \
   -T 4 \
   -M \
-  --fraction \
   -p \
   $dirlist
